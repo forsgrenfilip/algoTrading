@@ -14005,6 +14005,11 @@ a.anchor-link {
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <h1> Summary </h1>
 </div>
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2> Eolution of the strategies </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14044,6 +14049,11 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2>Table with the values of the strategies </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14422,6 +14432,11 @@ a.anchor-link {
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2>Table with the strategies performance measures </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -14775,7 +14790,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2> a) Plot the evolution of these strategies </h2>
+<h2> a) Plot the evolution of the strategies </h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -14820,7 +14835,7 @@ a.anchor-link {
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2>b) Table with the values of the benchmark strategies </h2>
+<h2>b) Table with the values of the strategies </h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15430,7 +15445,7 @@ During the test period the market following strategy performs the best in terms 
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2>b) Table with the values of the benchmark strategies </h2>
+<h2>b) Table with the values of the strategies </h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -15973,13 +15988,13 @@ During the test period the market following strategy still performs the best in 
         <span class="n">modelRF</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainX</span><span class="p">,</span> <span class="n">trainYTree</span><span class="p">[:,</span> <span class="n">stock</span><span class="p">])</span>   <span class="c1"># Train model</span>
         <span class="n">predictY</span><span class="p">[:,</span> <span class="n">stock</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelRF</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span> <span class="c1"># Predict</span>
 
-    <span class="n">ret4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">predictY</span><span class="o">*</span><span class="n">testY</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">predictY</span><span class="o">*</span><span class="n">testY</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">predictY</span><span class="p">)):</span>
         <span class="n">tmp</span> <span class="o">=</span> <span class="n">predictY</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">testY</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
         <span class="n">avg</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">startVal</span>
         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="n">returns</span><span class="p">[</span><span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="p">:</span> <span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">250</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret4</span>
+    <span class="n">returns</span><span class="p">[</span><span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="p">:</span> <span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">250</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret</span>
 
 <span class="n">averagePrecision</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">avg</span><span class="p">))</span>
 <span class="n">portfolioDF</span><span class="p">[</span><span class="s1">&#39;Random forest, max 3 deep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">startVal</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
@@ -16006,9 +16021,9 @@ During the test period the market following strategy still performs the best in 
 
 
 
-<div id="3975792c-47a0-4e30-bf22-eee9d067e11d" class="jupyter-widgets jp-OutputArea-output ">
+<div id="a41a1e26-bfce-44ef-ad86-4902c60a4862" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('3975792c-47a0-4e30-bf22-eee9d067e11d');
+var element = document.getElementById('a41a1e26-bfce-44ef-ad86-4902c60a4862');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "21d22898b47c4fab85a293324822b5f1", "version_major": 2, "version_minor": 0}
@@ -16057,13 +16072,13 @@ var element = document.getElementById('3975792c-47a0-4e30-bf22-eee9d067e11d');
         <span class="n">modelRF</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainX</span><span class="p">,</span> <span class="n">trainYTree</span><span class="p">[:,</span> <span class="n">stock</span><span class="p">])</span>       <span class="c1"># Train model</span>
         <span class="n">predictY</span><span class="p">[:,</span> <span class="n">stock</span><span class="p">]</span> <span class="o">=</span> <span class="n">modelRF</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testX</span><span class="p">)</span>     <span class="c1"># Predict</span>
 
-    <span class="n">ret4</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">predictY</span><span class="o">*</span><span class="n">testY</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
+    <span class="n">ret</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">predictY</span><span class="o">*</span><span class="n">testY</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span> 
     <span class="k">for</span> <span class="n">j</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">predictY</span><span class="p">)):</span>
         <span class="n">tmp</span> <span class="o">=</span> <span class="n">predictY</span><span class="p">[</span><span class="n">j</span><span class="p">]</span><span class="o">*</span><span class="n">testY</span><span class="p">[</span><span class="n">j</span><span class="p">]</span>
         <span class="n">avg</span><span class="p">[</span><span class="n">count</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">tmp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">/</span> <span class="n">startVal</span>
         <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
 
-    <span class="n">returns</span><span class="p">[</span><span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="p">:</span> <span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">250</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret4</span>
+    <span class="n">returns</span><span class="p">[</span><span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="p">:</span> <span class="mi">250</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">250</span><span class="p">]</span> <span class="o">=</span> <span class="n">ret</span>
 
 <span class="n">averagePrecision</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">avg</span><span class="p">))</span>
 <span class="n">portfolioDF</span><span class="p">[</span><span class="s1">&#39;Random forest, max 5 deep&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">startVal</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">cumsum</span><span class="p">(</span><span class="n">returns</span><span class="p">)</span>
@@ -16090,9 +16105,9 @@ var element = document.getElementById('3975792c-47a0-4e30-bf22-eee9d067e11d');
 
 
 
-<div id="13f9ceec-699f-4fc9-ad0a-dcb919fde413" class="jupyter-widgets jp-OutputArea-output ">
+<div id="81141b92-0bf3-4191-8b54-9282981f8769" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('13f9ceec-699f-4fc9-ad0a-dcb919fde413');
+var element = document.getElementById('81141b92-0bf3-4191-8b54-9282981f8769');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "8e952f9dd6184c80bfde844c5817b0b8", "version_major": 2, "version_minor": 0}
@@ -16108,7 +16123,7 @@ var element = document.getElementById('13f9ceec-699f-4fc9-ad0a-dcb919fde413');
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2> a) Plot the evolution of these strategies </h2>
+<h2> a) Plot the evolution of the strategies </h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -16152,7 +16167,7 @@ var element = document.getElementById('13f9ceec-699f-4fc9-ad0a-dcb919fde413');
 </div>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<h2>b) Table with the values of the benchmark strategies </h2>
+<h2>b) Table with the values of the strategies </h2>
 </div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
@@ -16770,9 +16785,9 @@ During the test period the Random forest, max 5 deep strategy have stolen the th
 
 
 
-<div id="57086de5-166f-4ae7-b0df-02ae506a0d00" class="jupyter-widgets jp-OutputArea-output ">
+<div id="faffe0c7-293d-4a88-9d24-c5546e286e35" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('57086de5-166f-4ae7-b0df-02ae506a0d00');
+var element = document.getElementById('faffe0c7-293d-4a88-9d24-c5546e286e35');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "507ca8b26ea144e4a7fc0908decd7577", "version_major": 2, "version_minor": 0}
@@ -16887,9 +16902,9 @@ var element = document.getElementById('57086de5-166f-4ae7-b0df-02ae506a0d00');
 
 
 
-<div id="a804d4c9-ce0e-4513-bfe3-75284cdab36b" class="jupyter-widgets jp-OutputArea-output ">
+<div id="669d7558-3595-4776-86d7-1cbf55506360" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('a804d4c9-ce0e-4513-bfe3-75284cdab36b');
+var element = document.getElementById('669d7558-3595-4776-86d7-1cbf55506360');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "00f52eddf1894f9ca9e341ffeca96a07", "version_major": 2, "version_minor": 0}
@@ -16902,6 +16917,11 @@ var element = document.getElementById('a804d4c9-ce0e-4513-bfe3-75284cdab36b');
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2> a) Plot the evolution of the strategies </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -16941,6 +16961,11 @@ var element = document.getElementById('a804d4c9-ce0e-4513-bfe3-75284cdab36b');
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2>b) Table with the values of the strategies </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -17343,6 +17368,11 @@ var element = document.getElementById('a804d4c9-ce0e-4513-bfe3-75284cdab36b');
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2> c) Table showing the strategies performance measures </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -17596,9 +17626,9 @@ Hence, we can again see that the Random forest, max 5 deep strategy have best pe
 
 
 
-<div id="8a9750b9-7c6c-4871-8cf7-779cd0ca58e1" class="jupyter-widgets jp-OutputArea-output ">
+<div id="b41a97c5-7bfa-4a5f-a09d-ad7697a18ed7" class="jupyter-widgets jp-OutputArea-output ">
 <script type="text/javascript">
-var element = document.getElementById('8a9750b9-7c6c-4871-8cf7-779cd0ca58e1');
+var element = document.getElementById('b41a97c5-7bfa-4a5f-a09d-ad7697a18ed7');
 </script>
 <script type="application/vnd.jupyter.widget-view+json">
 {"model_id": "0a666c16393d4b48bd7b94bae27f031e", "version_major": 2, "version_minor": 0}
@@ -17611,6 +17641,11 @@ var element = document.getElementById('8a9750b9-7c6c-4871-8cf7-779cd0ca58e1');
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2> a) Plot the evolution of the strategies </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -17650,6 +17685,11 @@ var element = document.getElementById('8a9750b9-7c6c-4871-8cf7-779cd0ca58e1');
 
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2>b) Table with the values of the strategies </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
@@ -18072,6 +18112,11 @@ var element = document.getElementById('8a9750b9-7c6c-4871-8cf7-779cd0ca58e1');
 </div>
 </div>
 
+</div>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<h2> c) Table showing the strategies performance measures </h2>
+</div>
 </div><div class="jp-Cell jp-CodeCell jp-Notebook-cell   ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
