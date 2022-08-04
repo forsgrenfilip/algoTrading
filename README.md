@@ -1,1 +1,1 @@
-This is a algorithmic Trading script in python
+This is a algorithmic trading script in python:)
